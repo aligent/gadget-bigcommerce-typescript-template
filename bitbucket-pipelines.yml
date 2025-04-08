@@ -1,0 +1,30 @@
+image: node:20
+
+definitions:
+  services:
+    docker:
+      memory: 3072
+  steps:
+    - step: &install
+        name: ⚙️ Install
+        script:
+          - yarn install --check-files
+        artifacts:
+          - node_modules/**
+    - step: &lint
+        name: 🧹 Lint
+        script:
+          - yarn run lint
+    - step: &test
+        name: 🧪 Test
+        script:
+          - yarn run test
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *install
+      - parallel:
+          steps:
+            - step: *test
+            - step: *lint
