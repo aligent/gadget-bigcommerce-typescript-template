@@ -26,13 +26,13 @@ This repository was developed to help determine best practices and configuration
 
 **Set up editing in your local IDE**
 
-- Open the Gadget Editor: [https://specials-categoriser-poc.gadget.app/edit/development](https://specials-categoriser-poc.gadget.app/edit/development)
+- Open the Gadget Editor: `https://<your-app-name>.gadget.app/edit/development`
 - Create a new development environment, cloning `development` ([Gadget documentation](https://docs.gadget.dev/guides/environments#adding-development-environments))
 - Clone this repository and sync local files with the server:
 
 ```
-git clone git@bitbucket.org:aligent/specials-categoriser-poc.git
-cd ./specials-categoriser-poc
+git clone https://github.com/aligent/gadget-bigcommerce-typescript-template.git your-app-name
+cd ./your-app-name
 yarn install --check-files
 yarn dev --env=new-environment-name
 ```
