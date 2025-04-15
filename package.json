@@ -1,7 +1,7 @@
 {
-  "name": "aligent-bigcommerce-gadget-template",
+  "name": "@aligent/gadget-bigcommerce-template",
   "version": "0.1.0",
-  "description": "Internal package for Gadget app aligent-bigcommerce-gadget-template",
+  "description": "Typescript and linting standards for BigCommerce Gadget apps",
   "license": "MIT",
   "private": true,
   "scripts": {

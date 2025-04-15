@@ -1,4 +1,4 @@
-# Aligent Gadget BigCommerce App proof of concept
+# Aligent Gadget BigCommerce App Typescript Template
 
 This repository was developed to help determine best practices and configuration for building BigCommerce apps with the [Gadget](https://gadget.dev/) platform.
 
@@ -11,12 +11,6 @@ This repository was developed to help determine best practices and configuration
     - `no-console` added as Gadget provides a `logger` object
     - `.gadget.ts` files are ignored because the Gadget server has a tendency to reformat them
 - `.yarn` added to `.ignore` and `.gitignore` (not strictly necessary as yarn classic doesn't create this folder)
-
-## Required BigCommerce scopes
-
-- View and modify store locations
-- View and modify basic store information
-- View and modify products
 
 ## Development
 
@@ -64,7 +58,7 @@ Note: If multiple versions of an app are installed in one BigCommerce account th
 
 ### Tips
 
-[Read the documentation here](https://aligent.atlassian.net/wiki/spaces/MG/pages/3822387232/General+Gadget+tips)
+Read our gadget-specific [development notes](./docs/GADGET.md).
 
 ### CI/CD
 
