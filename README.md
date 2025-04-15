@@ -24,7 +24,10 @@ This repository was developed to help determine best practices and configuration
 
 ### Quickstart
 
-**Set up editing in your local IDE**
+#### Set up editing in your local IDE
+
+> [!IMPORTANT]
+> Gadget requires **Yarn Classic**. Corepack should detect this from the `packageManager` property in `package.json`
 
 - Open the Gadget Editor: `https://<your-app-name>.gadget.app/edit/development`
 - Create a new development environment, cloning `development` ([Gadget documentation](https://docs.gadget.dev/guides/environments#adding-development-environments))
@@ -34,20 +37,22 @@ This repository was developed to help determine best practices and configuration
 git clone https://github.com/aligent/gadget-bigcommerce-typescript-template.git app-name
 cd ./app-name
 yarn gadget:link app-name environment-name
-# If prompted about conflicts, choose these options:
-# - Merge local and environment's changes
-# - Keep local conflicting changes
 ```
 
-- Optional: run `yarn lint --fix` in another terminal to identify (if possible) fix any linting errors in pulled down files
+> [!TIP]
+> If prompted about conflicts, choose these options:
+>
+> - Merge local and environment's changes
+> - Keep local conflicting changes
 
 > [!CAUTION]
 > Outright discarding files from the Gadget environment can leave it in an unusable state. If this happens you will need to push up a working app to the environment.
 
-> [!IMPORTANT]
-> Gadget requires **Yarn Classic**. Corepack should detect this from the `packageManager` property in `package.json`
+#### Optional - fix linting errors
 
-**Install your environment's version of the app in BigCommerce**
+run `yarn lint --fix` in another terminal to identify (if possible) fix any linting errors in pulled down files
+
+#### Install your environment's version of the app in BigCommerce
 
 - Open `Settings > Plugins > BigCommerce` in the Gadget Editor with your environment selected
 - Follow the instructions under `Create a single-click BigCommerce app`, taking care to:
@@ -58,7 +63,7 @@ yarn gadget:link app-name environment-name
 > [!IMPORTANT]
 > If multiple versions of an app are installed in one BigCommerce stores their processes may conflict. It's recommended to have different stores for testing each environment.
 
-### Adding features
+#### Add features
 
 1. Create a feature branch from development
 2. Make code changes with `ggt dev` running, test in connected environment
