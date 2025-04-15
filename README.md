@@ -20,7 +20,7 @@ This repository was developed to help determine best practices and configuration
 - Git repository is source of truth for code, not Gadget server
   - Exceptions to the above are `.gadget.ts` files (schemas etc.), which are easier to work with in the Gadget editor
 - Sync code with a separate environment, and test in a separate app linked to that environment
-- When ready to promote to development/staging, make a pull request
+- When ready to promote to development, make a pull request
 
 ### Quickstart
 
@@ -30,14 +30,20 @@ This repository was developed to help determine best practices and configuration
 - Create a new development environment, cloning `development` ([Gadget documentation](https://docs.gadget.dev/guides/environments#adding-development-environments))
 - Clone this repository and sync local files with the server:
 
-```
-git clone https://github.com/aligent/gadget-bigcommerce-typescript-template.git your-app-name
-cd ./your-app-name
-yarn install --check-files
-yarn dev --env=new-environment-name
+```bash
+git clone https://github.com/aligent/gadget-bigcommerce-typescript-template.git app-name
+cd ./app-name
+yarn gadget:link app-name environment-name
+# If prompted about conflicts, choose these options:
+# - Merge local and environment's changes
+# - Keep local conflicting changes
 ```
 
-Note: Gadget requires **Yarn Classic**. Corepack should detect this from the `packageManager` property in `package.json`
+- Optional: run `yarn lint --fix` in another terminal to identify (if possible) fix any linting errors in pulled down files
+
+> ![CAUTION] Outright discarding files from the Gadget environment can leave it in an unusable state. If this happens you will need to push up a working app to the environment.
+
+> ![INFO] Gadget requires **Yarn Classic**. Corepack should detect this from the `packageManager` property in `package.json`
 
 **Install your environment's version of the app in BigCommerce**
 
@@ -47,14 +53,18 @@ Note: Gadget requires **Yarn Classic**. Corepack should detect this from the `pa
   - Fill in **all** the callback URLs (Make sure to click `Show all URLs` in Gadget)
 - Open `Apps > My Apps > My Draft Apps` in the BigCommerce Admin and install your app
 
-Note: If multiple versions of an app are installed in one BigCommerce account their processes may conflict.
+> ![TIP] If multiple versions of an app are installed in one BigCommerce stores their processes may conflict. It's recommended to have different stores for testing each environment.
 
 ### Adding features
 
-- Create a feature branch
-- Make code changes with `ggt dev` running, test in connected environment
-- Commit changes to feature branch and PR back to `development`
-- When PR is accepted, sync `development` branch and environment on Gadget: `npx ggt push --env development`
+1. Create a feature branch from development
+2. Make code changes with `ggt dev` running, test in connected environment
+3. Commit changes to feature branch and PR back to `development`
+4. When PR is accepted, sync `development` branch and environment on Gadget:
+
+```bash
+npx ggt push --env development
+```
 
 ### Tips
 

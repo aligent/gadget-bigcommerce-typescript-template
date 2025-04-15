@@ -6,9 +6,7 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production vite build",
-    "dev": "npx ggt dev . --app=<App-Name> --prefer=local --allow-unknown-directory",
-    "status": "npx ggt status",
-    "push": "npx ggt push",
+    "gadget:link": "npx tsx ./scripts/gadget-link.ts",
     "lint": "eslint .",
     "check-types": "tsc --noEmit --pretty",
     "test": "echo 'Automated tests are not yet implemented'",
