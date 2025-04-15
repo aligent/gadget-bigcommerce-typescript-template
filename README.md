@@ -44,7 +44,7 @@ yarn gadget:link app-name environment-name
 > [!CAUTION]
 > Outright discarding files from the Gadget environment can leave it in an unusable state. If this happens you will need to push up a working app to the environment.
 
-> [!INFO]
+> [!IMPORTANT]
 > Gadget requires **Yarn Classic**. Corepack should detect this from the `packageManager` property in `package.json`
 
 **Install your environment's version of the app in BigCommerce**
@@ -55,7 +55,7 @@ yarn gadget:link app-name environment-name
   - Fill in **all** the callback URLs (Make sure to click `Show all URLs` in Gadget)
 - Open `Apps > My Apps > My Draft Apps` in the BigCommerce Admin and install your app
 
-> [!TIP]
+> [!IMPORTANT]
 > If multiple versions of an app are installed in one BigCommerce stores their processes may conflict. It's recommended to have different stores for testing each environment.
 
 ### Adding features
