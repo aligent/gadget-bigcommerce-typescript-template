@@ -1,1 +1,9 @@
+# Probably only matters for Yarn Berry but no harm in keeping it here
 .yarn
+
+# Development scripts are for local use only
+scripts
+
+# This file contains configuration related to server plugins
+# It's not needed locally and should be controlled by Gadget
+settings.gadget.ts
